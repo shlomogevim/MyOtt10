@@ -144,11 +144,42 @@ class Helper(val context: Context) {
         "ך" -> R.drawable.l2_127_chaff_sofit
 
         else -> R.drawable.l2_101_allef
-
     }
+    fun getAnimation0(st: String) = when (st) {
+        "א" -> R.drawable.l0_101_allef
+        "ב" -> R.drawable.l0_102_bet;
+        "ג" -> R.drawable.l0_103_gimel
+        "ד" -> R.drawable.l0_104_daled
+        "ה" -> R.drawable.l0_105_haii
+        "ו" -> R.drawable.l0_106_vav
+        "ז" -> R.drawable.l0_107_zain
+        "ח" -> R.drawable.l0_108_kait
+        "ט" -> R.drawable.l0_109_tet
+        "י" -> R.drawable.l0_110_yod
+        "כ" -> R.drawable.l0_111_kaaf
+        "ל" -> R.drawable.l0_112_lamed
+        "מ" -> R.drawable.l0_113_mem
+        "נ" -> R.drawable.l0_114_non
+        "ס" -> R.drawable.l0_115_shamech
+        "ע" -> R.drawable.l0_116_aahin
+        "פ" -> R.drawable.l0_117_phaii
+        "צ" -> R.drawable.l0_118_zadik
+        "ק" -> R.drawable.l0_119_koof;
+        "ר" -> R.drawable.l0_120_reash
+        "ש" -> R.drawable.l0_121_sheen
+        "ת" -> R.drawable.l0_122_taf
+        "ם" -> R.drawable.l0_123_mem_shofit
+        "ן" -> R.drawable.l0_124_non_shofit
+        "ץ" -> R.drawable.l0_125_zhadik_shofit
+        "ף" -> R.drawable.l0_126_pai_shofit
+        "ך" -> R.drawable.l0_127_chaff_sofit
 
-
+        else -> R.drawable.l0_101_allef
+    }
 }
+
+
+
 /*fun getAnimation(st: String): Int {
     var re = 0
     if (st.equals("א")) re = R.drawable.l2_1_allef
