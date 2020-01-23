@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.word1_layout.*
 import kotlinx.android.synthetic.main.word2_layout.*
 import kotlinx.android.synthetic.main.word3_layout.*
@@ -16,11 +17,13 @@ import kotlinx.coroutines.*
 class MainActivity : AppCompatActivity() {
 
     var contor = 0
+    lateinit var helper:Helper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        helper= Helper(this)
 
         CoroutineScope(Dispatchers.Main).launch {
             firstWord()
@@ -32,30 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private suspend fun fourthWord() {
-        delay(5000)
 
-        contor = 22
-        setParams(worldLayout4, 150, 365, 0, 530, 0, 0)
-        // worldLayout4.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
-        creadAVD(23, "ה")
-        creadAVD(24, "ו")
-        creadAVD(25, "א")
-
-        creadAVD(26, "מ")
-        creadAVD(27, "ק")
-        creadAVD(28, "ו")
-        creadAVD(29, "ם")
-
-        creadAVD(30, "ב")
-        creadAVD(31, "ל")
-        creadAVD(32, "י")
-
-        creadAVD(33, "א")
-        creadAVD(34, "ו")
-        creadAVD(35, "ר")
-
-    }
 
     private suspend fun thirdWord() {
         delay(15000)
@@ -132,27 +112,48 @@ class MainActivity : AppCompatActivity() {
             21 -> setParams(view, 110, 110, 0, 0, 175, 25)
             22 -> setParams(view, 120, 120, 0, 15, 230, 0)
 
-            23 -> setParams(view, 50, 50, 0, 0, 0, 20)
-            24 -> setParams(view, 50, 50, 0, 0, 20, 20)
-            25 -> setParams(view, 55, 55, 0, 0, 40, 25)
 
-            26 -> setParams(view, 55, 55, 0, 0, 80, 20)
-            27 -> setParams(view, 55, 55, 0, 0, 113, 0)
-            28 -> setParams(view, 50, 50, 0, 0, 135, 20)
-            29 -> setParams(view, 45, 45, 0, 0, 157, 15)
+            23 -> setParams(view, 50, 50, 0, 0, 0, 50)
+            24 -> setParams(view, 50, 50, 0, 0, 17, 60)
+            25 -> setParams(view, 50, 50, 0, 0, 35, 55)
+            26 -> setParams(view, 48, 48, 0, 0, 60, 60)
+            27 -> setParams(view, 50, 50, 0, 0, 115, 60)
+            28 -> setParams(view, 55, 55, 0, 0, 145, 60)
+            29 -> setParams(view, 50, 50, 0, 0, 165, 61)
+            30 -> setParams(view, 50, 50, 0, 0, 170, 50)
+            31 -> setParams(view, 55, 55, 0, 0, 210, 60)
+            32 -> setParams(view, 52, 52, 0, 0, 228, 61)
 
-            30 -> setParams(view, 55, 55, 0, 0, 200, 25)
-            31 -> setParams(view, 50, 50, 0, 0, 230, 20)
-            32 -> setParams(view, 50, 50, 0, 0, 248, 25)
+            33 -> setParams(view, 50, 50, 0, 0, 245, 55)
 
-            33 -> setParams(view, 55, 55, 0, 0, 285, 25)
-            34 -> setParams(view, 50, 50, 0, 0, 305, 20)
-            35 -> setParams(view, 50, 50, 0, 0, 323, 12)
-
+//            34 -> setParams(view, 50, 50, 0, 0, 305, 20)
+//            35 -> setParams(view, 50, 50, 0, 0, 323, 12)
         }
+    }
+    private suspend fun fourthWord() {
+         delay(5000)
+
+        contor = 22
+        setParams(worldLayout4, 150, 320, 0, 530, 0, 0)
+  //      worldLayout4.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+
+        creadAVD(23, "ק")
+        creadAVD(24, "ו")
+       creadAVD(25, "ר")
+        creadAVD(26, "ה")
+
+        creadAVD(27, "ש")
+        creadAVD(28, "א")
+        creadAVD(29, "י")
+        creadAVD(30, "ן")
+
+       creadAVD(31, "א")
+       creadAVD(32, "ו")
+        creadAVD(33, "ר")
+//        creadAVD(34, "ו")
+//        creadAVD(35, "ר")
 
     }
-
 
     private fun firstWord() {
 
@@ -193,7 +194,7 @@ class MainActivity : AppCompatActivity() {
 
     private suspend fun creadAVD(index: Int, letter: String) {
         contor++
-        val view = getView(index) as ImageView
+        val view = helper.getView(index) as ImageView
         val address = Helper(this).getAnimation(letter)
         individiualPatam(view)
 
@@ -213,13 +214,15 @@ class MainActivity : AppCompatActivity() {
     fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
 
 
+
+
     private fun setWordLayout(worldLayout: ConstraintLayout?, mTop: Int) {
         setParams(worldLayout1, 0, 0, 0, mTop, 0, 0)
 
     }
 
 
-    fun getView(index: Int): View {
+   /* fun getView(index: Int): View {
         var view: View
         when (index) {
             1 -> view = imageView1
@@ -264,5 +267,5 @@ class MainActivity : AppCompatActivity() {
             else -> view = imageView1
         }
         return view
-    }
+    }*/
 }

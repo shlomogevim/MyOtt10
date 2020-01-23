@@ -12,74 +12,69 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <ImageView
-            android:id="@+id/imageView40"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:color/transparent" />
 
-        <ImageView
-            android:id="@+id/imageView41"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="200dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:color/transparent" />
+    <ImageView
+        android:id="@+id/imageView40"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:color/transparent" />
 
-        <ImageView
-            android:id="@+id/imageView42"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="250dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:color/transparent" />
+    <ImageView
+        android:id="@+id/imageView41"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:color/transparent" />
 
-        <ImageView
-            android:id="@+id/imageView43"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="300dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:color/transparent" />
+    <ImageView
+        android:id="@+id/imageView42"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:color/transparent" />
 
-        <ImageView
-            android:id="@+id/imageView44"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="350dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:color/transparent" />
+    <ImageView
+        android:id="@+id/imageView43"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:color/transparent" />
 
-        <ImageView
-            android:id="@+id/imageView45"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="400dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:color/transparent" />
+    <ImageView
+        android:id="@+id/imageView44"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:color/transparent" />
 
-        <ImageView
-            android:id="@+id/imageView46"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="450dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:color/transparent" />
+    <ImageView
+        android:id="@+id/imageView45"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/imageView46"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="450dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:color/transparent" />
+
     <ImageView
         android:id="@+id/imageView47"
         android:layout_width="50dp"
@@ -87,8 +82,8 @@
         android:layout_marginEnd="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/transparent" />
+
     <ImageView
         android:id="@+id/imageView48"
         android:layout_width="50dp"
@@ -96,8 +91,8 @@
         android:layout_marginEnd="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/transparent" />
+
     <ImageView
         android:id="@+id/imageView49"
         android:layout_width="50dp"
@@ -105,8 +100,8 @@
         android:layout_marginEnd="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/transparent" />
+
     <ImageView
         android:id="@+id/imageView491"
         android:layout_width="50dp"
@@ -114,8 +109,8 @@
         android:layout_marginEnd="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/transparent" />
+
     <ImageView
         android:id="@+id/imageView492"
         android:layout_width="50dp"
@@ -123,8 +118,8 @@
         android:layout_marginEnd="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/transparent" />
+
     <ImageView
         android:id="@+id/imageView493"
         android:layout_width="50dp"
@@ -132,8 +127,8 @@
         android:layout_marginEnd="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/transparent" />
+
     <ImageView
         android:id="@+id/imageView494"
         android:layout_width="50dp"
@@ -141,7 +136,6 @@
         android:layout_marginEnd="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/transparent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,10 +1,117 @@
 package com.example.myott10
 
+import android.app.Activity
 import android.content.Context
+import android.view.View
+import kotlinx.android.synthetic.main.word1_layout.*
+import kotlinx.android.synthetic.main.word2_layout.*
+import kotlinx.android.synthetic.main.word3_layout.*
+import kotlinx.android.synthetic.main.word4_layout.*
 
 class Helper(val context: Context) {
 
+    fun getView(index: Int): View? {
+        var view: View? = null
+        val activity=context as Activity
+        with(activity) {
+            when (index) {
+                1 -> view = imageView1
+                2 -> view = imageView2
+                3 -> view = imageView3
+                4 -> view = imageView4
 
+                5 -> view = imageView10
+                6 -> view = imageView11
+                7 -> view = imageView12
+                8 -> view = imageView13
+                9 -> view = imageView14
+                10 -> view = imageView15
+                11 -> view = imageView16
+                12 -> view = imageView17
+                13 -> view = imageView18
+                14 -> view = imageView19
+                15 -> view = imageView20
+                16 -> view = imageView21
+                17 -> view = imageView22
+
+                18 -> view = imageView30
+                19 -> view = imageView31
+                20 -> view = imageView32
+                21 -> view = imageView33
+                22 -> view = imageView34
+
+                23 -> view = imageView40
+                24 -> view = imageView41
+                25 -> view = imageView42
+                26 -> view = imageView43
+                27 -> view = imageView44
+                28 -> view = imageView45
+                29 -> view = imageView46
+                30 -> view = imageView47
+                31 -> view = imageView48
+                32 -> view = imageView49
+                33 -> view = imageView491
+                34 -> view = imageView492
+                35 -> view = imageView493
+
+                else -> view = imageView1
+            }
+
+        }
+
+
+
+        return view
+    }
+
+
+    /*
+    *  fun getView(index: Int): View {
+        var view: View
+        when (index) {
+            1 -> view = imageView1
+            2 -> view = imageView2
+            3 -> view = imageView3
+            4 -> view = imageView4
+
+            5 -> view = imageView10
+            6 -> view = imageView11
+            7 -> view = imageView12
+            8 -> view = imageView13
+            9 -> view = imageView14
+            10 -> view = imageView15
+            11 -> view = imageView16
+            12 -> view = imageView17
+            13 -> view = imageView18
+            14 -> view = imageView19
+            15 -> view = imageView20
+            16 -> view = imageView21
+            17 -> view = imageView22
+
+            18 -> view = imageView30
+            19 -> view = imageView31
+            20 -> view = imageView32
+            21 -> view = imageView33
+            22 -> view = imageView34
+
+            23 -> view = imageView40
+            24 -> view = imageView41
+            25 -> view = imageView42
+            26 -> view = imageView43
+            27 -> view = imageView44
+            28 -> view = imageView45
+            29 -> view = imageView46
+            30 -> view = imageView47
+            31 -> view = imageView48
+            32 -> view = imageView49
+            33 -> view = imageView491
+            34 -> view = imageView492
+            35 -> view = imageView493
+
+            else -> view = imageView1
+        }
+        return view
+    }*/
 
 
     fun getAnimation(st: String) = when (st) {
