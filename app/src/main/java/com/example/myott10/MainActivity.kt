@@ -1,5 +1,6 @@
 package com.example.myott10
 
+import android.animation.AnimatorInflater
 import android.content.res.Resources
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
@@ -7,6 +8,8 @@ import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.word1_layout.*
 import kotlinx.android.synthetic.main.word2_layout.*
 import kotlinx.android.synthetic.main.word3_layout.*
@@ -17,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     var contor = 0
     lateinit var helper: Helper
-    var AnimtinoMode=false
+    var AnimtinoMode = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,20 +29,42 @@ class MainActivity : AppCompatActivity() {
         helper = Helper(this)
 
         CoroutineScope(Dispatchers.Main).launch {
-            if (AnimtinoMode){
-                    firstWord()
-                    secondWord()
-                    thirdWord()
-                    fourthWord()
-            }else{
-                    firstWord1()
-                    secondWord1()
-                    thirdWord1()
-                    fourthWord1()
+            if (AnimtinoMode) {
+                firstWord()
+                secondWord()
+                thirdWord()
+                fourthWord()
+            } else {
+                firstWord1()
+                secondWord1()
+                thirdWord1()
+                fourthWord1()
             }
 
         }
     }
+
+    fun click_Button(view: View) {
+        val anim = AnimatorInflater.loadAnimator(this, R.animator.set1)
+        anim?.apply {
+            setTarget(worldLayout3)
+            start()
+        }
+        val anim2 = AnimatorInflater.loadAnimator(this, R.animator.set2)
+        anim2?.apply {
+            setTarget(worldLayout4)
+            start()
+        }
+        val anim3 = AnimatorInflater.loadAnimator(this, R.animator.alpha)
+        anim3?.apply {
+            setTarget(mainLayout)
+            start()
+        }
+
+    }
+
+
+
 
     private fun firstWord1() {
 
@@ -54,9 +79,10 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
     private suspend fun secondWord1() {
-        delay(10)
-       contor = 4
+        delay(200)
+        contor = 4
         setParams(worldLayout2, 150, 380, 0, 0, 0, 300)
 
         //  worldLayout2.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
@@ -80,8 +106,9 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
     private suspend fun thirdWord1() {
-        delay(15)
+        delay(100)
         contor = 17
         setParams(worldLayout3, 150, 360, 0, 350, 0, 0)
         //  worldLayout3.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
@@ -94,35 +121,17 @@ class MainActivity : AppCompatActivity() {
             creadAVD1(22, "ך")
         }
     }
-    private suspend fun fourthWord1() {
-        delay(20)
-        contor = 22
-        setParams(worldLayout4, 150, 320, 0, 530, 0, 0)
-        //      worldLayout4.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
 
-        creadAVD1(23, "ק")
-        creadAVD1(24, "ו")
-        creadAVD1(25, "ר")
-        creadAVD1(26, "ה")
-
-        creadAVD1(27, "ש")
-        creadAVD1(28, "א")
-        creadAVD1(29, "י")
-        creadAVD1(30, "ן")
-
-        creadAVD1(31, "א")
-        creadAVD1(32, "ו")
-        creadAVD1(33, "ר")
-    }
     private suspend fun creadAVD1(index: Int, letter: String) {
         contor++
         val view = helper.getView(index) as ImageView
         val address = Helper(this).getAnimation0(letter)
         individiualPatam(view)
-
-        view.setImageResource(address)
-
+        withContext(Dispatchers.Main) {
+            view.setImageResource(address)
+        }
     }
+
     private fun firstWord() {
         setParams(worldLayout1, 250, 380, 0, 0, 0, 500)
         //  worldLayout1.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
@@ -133,6 +142,7 @@ class MainActivity : AppCompatActivity() {
             creadAVD(4, "ר")
         }
     }
+
     private suspend fun secondWord() {
         delay(5000)
         contor = 4
@@ -177,9 +187,26 @@ class MainActivity : AppCompatActivity() {
 
     private suspend fun fourthWord() {
         delay(5000)
-
         contor = 22
-        setParams(worldLayout4, 150, 320, 0, 530, 0, 0)
+
+        setParams(worldLayout4, 150, 340, 0, 500, 0, 0)
+        // worldLayout4.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+        creadAVD1(23, "ה")
+        creadAVD1(24, "ו")
+        creadAVD1(25, "א")
+
+        creadAVD1(26, "מ")
+        creadAVD1(27, "מ")
+        creadAVD1(28, "ל")
+        creadAVD1(29, "א")
+
+        creadAVD1(30, "מ")
+        creadAVD1(31, "ק")
+        creadAVD1(32, "ו")
+        creadAVD1(33, "ם")
+
+
+     /*   setParams(worldLayout4, 150, 320, 0, 530, 0, 0)
         //      worldLayout4.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
 
         creadAVD(23, "ק")
@@ -194,7 +221,7 @@ class MainActivity : AppCompatActivity() {
 
         creadAVD(31, "א")
         creadAVD(32, "ו")
-        creadAVD(33, "ר")
+        creadAVD(33, "ר")*/
     }
 
     private fun individiualPatam(view: View) {
@@ -228,25 +255,44 @@ class MainActivity : AppCompatActivity() {
 
 
             23 -> setParams(view, 50, 50, 0, 0, 0, 50)
-            24 -> setParams(view, 50, 50, 0, 0, 17, 60)
-            25 -> setParams(view, 50, 50, 0, 0, 35, 55)
-            26 -> setParams(view, 48, 48, 0, 0, 60, 60)
-            27 -> setParams(view, 50, 50, 0, 0, 115, 60)
-            28 -> setParams(view, 55, 55, 0, 0, 145, 60)
-            29 -> setParams(view, 50, 50, 0, 0, 165, 61)
-            30 -> setParams(view, 50, 50, 0, 0, 170, 50)
-            31 -> setParams(view, 55, 55, 0, 0, 210, 60)
-            32 -> setParams(view, 52, 52, 0, 0, 228, 61)
+            24 -> setParams(view, 50, 50, 0, 0, 20, 50)
+            25 -> setParams(view, 50, 50, 0, 0, 40, 50)
+            26 -> setParams(view, 48, 48, 0, 0, 80, 50)
+            27 -> setParams(view, 50, 50, 0, 0, 105, 50)
+            28 -> setParams(view, 50, 50, 0, 0, 130, 50)
+            29 -> setParams(view, 50, 50, 0, 0, 163, 50)
+            30 -> setParams(view, 50, 50, 0, 0, 200, 50)
+            31 -> setParams(view, 50, 50, 0, 0, 230, 40)
+            32 -> setParams(view, 50, 50, 0, 0, 248, 50)
 
-            33 -> setParams(view, 50, 50, 0, 0, 245, 55)
+            33 -> setParams(view, 45, 45, 0, 0, 272, 50)
 
 //            34 -> setParams(view, 50, 50, 0, 0, 305, 20)
 //            35 -> setParams(view, 50, 50, 0, 0, 323, 12)
         }
     }
+    private suspend fun fourthWord1() {
+        delay(100)
+        contor = 22
+        setParams(worldLayout4, 150, 340, 0, 500, 0, 0)
+     // worldLayout4.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+        creadAVD1(23, "ה")
+        creadAVD1(24, "ו")
+        creadAVD1(25, "א")
 
+        creadAVD1(26, "מ")
+        creadAVD1(27, "מ")
+        creadAVD1(28, "ל")
+        creadAVD1(29, "א")
 
-
+       creadAVD1(30, "מ")
+       creadAVD1(31, "ק")
+       creadAVD1(32, "ו")
+       creadAVD1(33, "ם")
+//        creadAVD1(34, "ק")
+//        creadAVD1(35, "ו")
+//        creadAVD1(36, "ם")
+    }
 
     private fun setParams(
         view: View,
