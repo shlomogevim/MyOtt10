@@ -20,28 +20,59 @@ class MainActivity : AppCompatActivity() {
 
     var contor = 0
     lateinit var helper: Helper
-    var AnimtinoMode = false
+    var AnimtinoMode = true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        helper = Helper(this)
 
-        CoroutineScope(Dispatchers.Main).launch {
-            if (AnimtinoMode) {
-                firstWord()
-                secondWord()
-                thirdWord()
-                fourthWord()
-            } else {
-                firstWord1()
-                secondWord1()
-                thirdWord1()
-                fourthWord1()
+        helper = Helper(this)
+        mainLayout.setOnClickListener {
+            CoroutineScope(Dispatchers.Main).launch {
+                if (AnimtinoMode) {
+                    firstWord()
+                    secondWord()
+                    thirdWord()
+                    fourthWord()
+                } else {
+                    firstWord1()
+                    secondWord1()
+                    thirdWord1()
+                    fourthWord1()
+                }
+                lastApizode()
             }
 
         }
+
+
+    }
+
+    private suspend fun lastApizode() {
+        delay(2000)
+        val anim = AnimatorInflater.loadAnimator(this, R.animator.set1)
+        anim?.apply {
+            setTarget(worldLayout3)
+            start()
+        }
+        val anim2 = AnimatorInflater.loadAnimator(this, R.animator.set2)
+        anim2?.apply {
+            setTarget(worldLayout4)
+            start()
+        }
+        val anim3 = AnimatorInflater.loadAnimator(this, R.animator.alpha)
+        anim3?.apply {
+            setTarget(mainLayout)
+            //   start()
+        }
+        val anim4 = AnimatorInflater.loadAnimator(this, R.animator.alpha1)
+        iv_sea.visibility=View.VISIBLE
+        anim4?.apply {
+            setTarget(iv_sea)
+            start()
+        }
+
     }
 
     fun click_Button(view: View) {
@@ -58,9 +89,14 @@ class MainActivity : AppCompatActivity() {
         val anim3 = AnimatorInflater.loadAnimator(this, R.animator.alpha)
         anim3?.apply {
             setTarget(mainLayout)
+         //   start()
+        }
+        val anim4 = AnimatorInflater.loadAnimator(this, R.animator.alpha1)
+        iv_sea.visibility=View.VISIBLE
+        anim4?.apply {
+            setTarget(iv_sea)
             start()
         }
-
     }
 
 
@@ -144,7 +180,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun secondWord() {
-        delay(5000)
+        delay(4000)
         contor = 4
         setParams(worldLayout2, 150, 380, 0, 0, 0, 300)
 
@@ -170,7 +206,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun thirdWord() {
-        delay(15000)
+        delay(13000)
 
         contor = 17
         setParams(worldLayout3, 150, 360, 0, 350, 0, 0)
@@ -191,19 +227,19 @@ class MainActivity : AppCompatActivity() {
 
         setParams(worldLayout4, 150, 340, 0, 500, 0, 0)
         // worldLayout4.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
-        creadAVD1(23, "ה")
-        creadAVD1(24, "ו")
-        creadAVD1(25, "א")
+        creadAVD(23, "ה")
+        creadAVD(24, "ו")
+        creadAVD(25, "א")
 
-        creadAVD1(26, "מ")
-        creadAVD1(27, "מ")
-        creadAVD1(28, "ל")
-        creadAVD1(29, "א")
+        creadAVD(26, "מ")
+        creadAVD(27, "מ")
+        creadAVD(28, "ל")
+        creadAVD(29, "א")
 
-        creadAVD1(30, "מ")
-        creadAVD1(31, "ק")
-        creadAVD1(32, "ו")
-        creadAVD1(33, "ם")
+        creadAVD(30, "מ")
+        creadAVD(31, "ק")
+        creadAVD(32, "ו")
+        creadAVD(33, "ם")
 
 
      /*   setParams(worldLayout4, 150, 320, 0, 530, 0, 0)
