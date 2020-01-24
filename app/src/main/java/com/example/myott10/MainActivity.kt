@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.word1_layout.*
 import kotlinx.android.synthetic.main.word2_layout.*
@@ -21,6 +20,10 @@ class MainActivity : AppCompatActivity() {
     var contor = 0
     lateinit var helper: Helper
     var AnimtinoMode = true
+    val DelayBetweenLetters=500L
+    val DelayToSecondLine=2000L
+    val DelayToThirdLine=7000L
+    val DelayToForthLine=3000L
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -180,7 +183,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun secondWord() {
-        delay(4000)
+        delay(DelayToSecondLine)
         contor = 4
         setParams(worldLayout2, 150, 380, 0, 0, 0, 300)
 
@@ -206,7 +209,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun thirdWord() {
-        delay(13000)
+        delay(DelayToThirdLine)
 
         contor = 17
         setParams(worldLayout3, 150, 360, 0, 350, 0, 0)
@@ -222,7 +225,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun fourthWord() {
-        delay(5000)
+        delay(DelayToForthLine)
         contor = 22
 
         setParams(worldLayout4, 150, 340, 0, 500, 0, 0)
@@ -360,7 +363,7 @@ class MainActivity : AppCompatActivity() {
 
         withContext(Dispatchers.Main) {
 
-            delay(1000)
+            delay(DelayBetweenLetters)
 
             view.setImageResource(address)
             val avd = view.drawable as AnimatedVectorDrawable

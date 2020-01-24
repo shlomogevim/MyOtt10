@@ -1,7 +1,7 @@
 <animated-vector
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt">
-    <aapt:attr name="android:drawable">
+    <aapt:attr name="android:drawable" >
         <vector
             android:name="vector"
             android:width="240dp"
@@ -34,7 +34,7 @@
         <aapt:attr name="android:animation">
             <objectAnimator
                 android:propertyName="trimPathStart"
-                android:duration="649"
+                android:duration="250"
                 android:valueFrom="0"
                 android:valueTo="1"
                 android:valueType="floatType"
@@ -46,7 +46,7 @@
             <objectAnimator
                 android:propertyName="trimPathStart"
                 android:startOffset="620"
-                android:duration="380"
+                android:duration="250"
                 android:valueFrom="0"
                 android:valueTo="1"
                 android:valueType="floatType"

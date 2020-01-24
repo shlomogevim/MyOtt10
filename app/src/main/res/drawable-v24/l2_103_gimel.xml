@@ -26,7 +26,7 @@
         <aapt:attr name="android:animation">
             <objectAnimator
                 android:propertyName="trimPathStart"
-                android:duration="1000"
+                android:duration="500"
                 android:valueFrom="0"
                 android:valueTo="1"
                 android:valueType="floatType"
